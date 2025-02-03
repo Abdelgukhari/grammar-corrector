@@ -1,6 +1,6 @@
 Flask==3.0.0
 transformers==4.37.2
-torch==2.2.0
+torch==2.5.0
 sentencepiece==0.1.99
 textblob==0.17.1
 symspellpy==6.7.7

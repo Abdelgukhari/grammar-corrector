@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Spell & Grammar Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Spell & Grammar Checker</h1>
+        <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+        <br>
+        <button onclick="checkText()">Check</button>
+
+        <div class="result-container">
+            <h2>Corrected Text:</h2>
+            <p id="correctedText"></p>
+
+            <h2>Highlighted Mistakes:</h2>
+            <p id="highlightedMistakes"></p>
+
+            <h2>Learning Insights:</h2>
+            <ul id="learningInsights"></ul>
+
+            <p id="noMistakes" style="display: none;">✅ No mistakes detected!</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,3 +1,9 @@
-flask
-transformers
-torch
+Flask==3.0.0
+transformers==4.37.2
+torch==2.2.0
+sentencepiece==0.1.99
+textblob==0.17.1
+symspellpy==6.7.7
+nltk==3.9.1
+gunicorn==21.2.0
+flask-cors==3.0.10

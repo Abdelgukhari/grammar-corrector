@@ -27,12 +27,19 @@ class TestSpellGrammarChecker(unittest.TestCase):
         corrected = self.checker.correct_text(text)["corrected_text"]
         self.assertEqual(corrected, expected)
 
+    def test_remove_repeated_words(self):
+        """Ensure repeated words are removed correctly."""
+        text = "They they saw the evidance."
+        expected = "They saw the evidence."
+        corrected = self.checker.remove_repeated_words(text)
+        self.assertEqual(corrected, expected)
+
     def test_highlighted_mistakes(self):
         """Test if mistakes are correctly highlighted."""
         text = "He dont like pizza."
         corrected_text = self.checker.correct_text(text)
-        self.assertIn("<del>dont</del>", corrected_text["highlighted_mistakes"])
-        self.assertIn("<ins>doesn't</ins>", corrected_text["highlighted_mistakes"])
+        self.assertIn("<del style='color: red;'>dont</del>", corrected_text["highlighted_mistakes"])
+        self.assertIn("<ins style='color: green;'>doesn't</ins>", corrected_text["highlighted_mistakes"])
 
 if __name__ == '__main__':
     unittest.main()
